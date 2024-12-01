@@ -16,54 +16,54 @@ const AlertsChart = () => {
         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
         style={{
           //backgroundColor: "#1e1e2f", // Dark background
-          borderRadius: "12px", // Rounded corners
-          padding: "10px",
+          borderRadius: "12px", 
+          padding: "2px",
         }}
       >
         <CartesianGrid
           strokeDasharray="3 3"
           strokeOpacity={0.3}
-          stroke="#ffffff" // Grid lines in light color with opacity
+          stroke="#ffffff" 
         />
         <XAxis
           dataKey="name"
           stroke="#ffffff" // Axis text color
-          tick={{ fontSize: 12, fill: "#ffffff", opacity: 0.7 }} // Custom tick styles
-          axisLine={{ stroke: "#555555" }} // Axis line color
+          tick={{ fontSize: 12, fill: "#ffffff", opacity: 0.7 }} 
+          axisLine={{ stroke: "#555555" }} 
         />
         <YAxis
           stroke="#ffffff" // Axis text color
-          tick={{ fontSize: 12, fill: "#ffffff", opacity: 0.7 }} // Custom tick styles
-          axisLine={{ stroke: "#555555" }} // Axis line color
+          tick={{ fontSize: 12, fill: "#ffffff", opacity: 0.7 }} 
+          axisLine={{ stroke: "#555555" }} 
         />
         <Tooltip
           contentStyle={{
-            backgroundColor: "#333333", // Dark background for tooltip
+            backgroundColor: "#333333", 
             border: "none",
             borderRadius: "8px",
             color: "#ffffff",
           }}
-          itemStyle={{ color: "#ffffff" }} // Tooltip text color
+          itemStyle={{ color: "#ffffff" }} 
         />
         <Legend
           verticalAlign="top"
           align="right"
           iconType="circle"
-          wrapperStyle={{ color: "#ffffff", opacity: 0.8 }} // Legend styles
+          wrapperStyle={{ color: "#ffffff", opacity: 0.8 }} 
         />
         <Line
           type="monotone"
           dataKey="Updates"
-          stroke="#82ca9d" // Green color
+          stroke="#82ca9d" 
           strokeWidth={2}
-          dot={{ fill: "#82ca9d", strokeWidth: 2, r: 4 }} // Styled dots
+          dot={{ fill: "#82ca9d", strokeWidth: 2, r: 4 }} 
         />
         <Line
           type="monotone"
           dataKey="Alerts"
-          stroke="#8884d8" // Blue color
+          stroke="#8884d8" 
           strokeWidth={2}
-          dot={{ fill: "#8884d8", strokeWidth: 2, r: 4 }} // Styled dots
+          dot={{ fill: "#8884d8", strokeWidth: 2, r: 4 }} 
         />
       </LineChart>
     </ResponsiveContainer>

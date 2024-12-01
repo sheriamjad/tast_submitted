@@ -18,8 +18,8 @@ import dayjs from "dayjs";
 
 const Dashboard = () => {
   const [sortType, setSortType] = useState("");
-  const [startDateTime, setStartDateTime] = useState(dayjs().subtract(7, "day")); // Default 7 days ago
-  const [endDateTime, setEndDateTime] = useState(dayjs()); // Default today
+  const [startDateTime, setStartDateTime] = useState(dayjs().subtract(7, "day")); 
+  const [endDateTime, setEndDateTime] = useState(dayjs());
 
   const handleSortChange = (event) => {
     setSortType(event.target.value);
@@ -30,22 +30,21 @@ const Dashboard = () => {
       <Box sx={{ flexGrow: 1, p: 3, minHeight: "100vh" }}>
         <Grid container spacing={3}>
           {/* Chart Section on the Left */}
-          <Grid item xs={9}> {/* Increased width for the chart */}
+          <Grid item xs={9}> 
             <AlertsChart />
           </Grid>
 
           {/* Stats Section on the Right */}
-          <Grid item xs={3}> {/* Reduced width for stats */}
+          <Grid item xs={3}>
             <Box
               sx={{
                 display: "flex",
-                flexDirection: { xs: "row", md: "column" }, // Row on small screens, column on medium and above
+                flexDirection: { xs: "row", md: "column" }, 
                 gap: 2,
-                justifyContent: "center", // Center stats cards on small screens
+                justifyContent: "center", 
               }}
             >
-              <StatsCard
-              />
+              <StatsCard />
             </Box>
           </Grid>
 
@@ -54,9 +53,11 @@ const Dashboard = () => {
             <Box
               sx={{
                 display: "flex",
-                gap: 3,
+                gap: 2, 
                 alignItems: "center",
                 mb: 3,
+                marginBottom: "2px",
+                marginTop: "1px",
               }}
             >
               {/* Start Date and Time Picker */}
@@ -69,12 +70,12 @@ const Dashboard = () => {
                     {...params}
                     sx={{
                       backgroundColor: "#1e1e2f",
-                      input: { color: "#fff" },
-                      label: { color: "#fff" },
+                      input: { color: "#fff", fontSize: "12px", padding: "8px" }, 
+                      label: { color: "#fff", fontSize: "12px" }, 
                       "& .MuiOutlinedInput-notchedOutline": {
                         borderColor: "#fff",
                       },
-                      width: "250px",
+                      width: "200px", 
                     }}
                   />
                 )}
@@ -90,20 +91,20 @@ const Dashboard = () => {
                     {...params}
                     sx={{
                       backgroundColor: "#1e1e2f",
-                      input: { color: "#fff" },
-                      label: { color: "#fff" },
+                      input: { color: "#fff", fontSize: "12px", padding: "8px" }, 
+                      label: { color: "#fff", fontSize: "12px" }, 
                       "& .MuiOutlinedInput-notchedOutline": {
                         borderColor: "#fff",
                       },
-                      width: "250px",
+                      width: "200px", 
                     }}
                   />
                 )}
               />
 
               {/* Sort Dropdown */}
-              <FormControl variant="outlined" sx={{ minWidth: 200 }}>
-                <InputLabel sx={{ color: "#fff" }}>Sort by Type</InputLabel>
+              <FormControl variant="outlined" sx={{ minWidth: 160 }}> 
+                <InputLabel sx={{ color: "#fff", fontSize: "12px" }}>Sort by Type</InputLabel> 
                 <Select
                   value={sortType}
                   onChange={handleSortChange}
@@ -111,8 +112,12 @@ const Dashboard = () => {
                   sx={{
                     backgroundColor: "#1e1e2f",
                     color: "#fff",
+                    fontSize: "12px", 
                     "& .MuiOutlinedInput-notchedOutline": {
                       borderColor: "#fff",
+                    },
+                    "& .MuiSelect-select": {
+                      padding: "px", 
                     },
                   }}
                 >
@@ -124,7 +129,7 @@ const Dashboard = () => {
             </Box>
           </Grid>
 
-          {/* Full-Width Alerts Table */}
+         
           <Grid item xs={12}>
             <AlertsTable />
           </Grid>

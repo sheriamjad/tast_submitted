@@ -5,8 +5,10 @@ import Header from "./components/Header";
 import Dashboard from "./components/Dashboard";
 
 function App() {
-  // Manage theme state in App
+  // Manage theme state
   const [isDark, setIsDark] = useState(true);
+  // Manage sidebar collapse
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   // Create theme dynamically based on the state
   const theme = useMemo(
@@ -35,15 +37,20 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box sx={{ display: "flex", height: "100vh" }}>
-        {/* Sidebar with toggleTheme passed as a prop */}
-        <Sidebar toggleTheme={toggleTheme} isDark={isDark} />
+        {/* Sidebar */}
+        <Sidebar
+          toggleTheme={toggleTheme}
+          isDark={isDark}
+          isOpen={isSidebarOpen}
+          onClose={() => setSidebarOpen(false)}
+        />
 
         {/* Main Content */}
         <Box sx={{ flexGrow: 1 }}>
-          {/* Header */}
-          <Header />
+          {/* Header with a button to toggle the sidebar */}
+          <Header onSidebarToggle={() => setSidebarOpen(!isSidebarOpen)} isDark={isDark} />
 
-          {/* Dashboard */}
+          
           <Dashboard />
         </Box>
       </Box>

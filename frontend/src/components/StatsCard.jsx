@@ -8,19 +8,19 @@ const StatsCard = ({ title, value, icon, gradient }) => {
     <Paper
       elevation={3}
       sx={{
-        height: "140px", // Card height
-        width: "100%", // Make width flexible
-        maxWidth: "280px", // Set max width
-        borderRadius: "12px", // Rounded corners
-        overflow: "hidden", // Prevent content overflow
-        position: "relative", // For layered positioning
+        height: "140px", 
+        width: "100%", 
+        maxWidth: "280px", 
+        borderRadius: "12px", 
+        overflow: "hidden", 
+        position: "relative", 
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        padding: "16px", // Inner padding
-        color: "#ffffff", // White text color
-        background: gradient, // Gradient background
-        boxShadow: "0 4px 15px rgba(0, 0, 0, 0.3)", // Subtle shadow for depth
+        padding: "16px", 
+        color: "#ffffff", 
+        background: gradient, 
+        boxShadow: "0 4px 15px rgba(0, 0, 0, 0.3)", 
       }}
     >
       {/* Diagonal Gradient Overlay */}
@@ -40,8 +40,8 @@ const StatsCard = ({ title, value, icon, gradient }) => {
       <Box
         sx={{
           position: "relative",
-          zIndex: 2, // Ensure icon is above the gradient
-          backgroundColor: "rgba(255, 255, 255, 0.1)", // Icon background
+          zIndex: 2, 
+          backgroundColor: "rgba(255, 255, 255, 0.1)", 
           borderRadius: "50%",
           width: "48px",
           height: "48px",
@@ -58,7 +58,7 @@ const StatsCard = ({ title, value, icon, gradient }) => {
         variant="body2"
         sx={{
           position: "relative",
-          zIndex: 2, // Ensure text is above the gradient
+          zIndex: 2, 
           fontSize: "14px",
           fontWeight: "500",
           marginTop: "8px",
@@ -75,7 +75,7 @@ const StatsCard = ({ title, value, icon, gradient }) => {
           zIndex: 2,
           fontWeight: "bold",
           fontSize: "24px",
-          textAlign: "left", // Align value to the left
+          textAlign: "left", 
           marginTop: "8px",
         }}
       >

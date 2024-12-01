@@ -11,8 +11,8 @@ import {
 } from "@mui/material";
 
 const AlertsTable = () => {
-  const [data, setData] = useState([]); // State for table data
-  const [loading, setLoading] = useState(true); // Loading state
+  const [data, setData] = useState([]); 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch data from backend
@@ -24,12 +24,12 @@ const AlertsTable = () => {
         return response.json();
       })
       .then((data) => {
-        setData(data); // Update table data
-        setLoading(false); // Stop loading
+        setData(data); 
+        setLoading(false); 
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
-        setLoading(false); // Stop loading even if there's an error
+        setLoading(false); 
       });
   }, []);
 
